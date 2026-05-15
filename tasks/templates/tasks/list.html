@@ -1,0 +1,82 @@
+<style>
+    body {
+        font-family: 'Tahoma', sans-serif;
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        width: 400px;
+    }
+    input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    li {
+        list-style: none;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .delete-btn {
+        padding: 5px 10px;
+        background-color: #dc3545; /* رنگ قرمز */
+        color: white !important; /* رنگ متن سفید */
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s;
+    }
+    .delete-btn:hover {
+    background-color: #a71d2a; /* قرمز تیره هنگام نگه داشتن موس */
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+</style>
+
+<div class="container">
+
+<h1>My Todo List:</h1>
+
+<form method="POST">
+    {% csrf_token %} {{ form.title }}
+    <button type="submit">Add</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            <a href="{% url 'complete_task' task.id %}" style="text-decoration: none; color: black; flex-grow: 1;">
+                <span class="{% if task.completed %}completed{% endif %}">
+                    {{ task.title }}
+                </span>
+            </a>
+            
+            <a href="{% url 'delete_task' task.id %}" class="delete-btn">Delete</a>
+        </li>
+    {% empty %}
+        <li>There is no task yet!</li>
+    {% endfor %}
+</ul>
