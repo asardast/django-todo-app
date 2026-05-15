@@ -10,10 +10,10 @@ A simple and secure Task Management application built with **Django 6.0**. This 
 * **Clean Code:** Adheres to Django's best practices and project structure.
 
 ## Tech Stack
-**Framework:** [Django](https://www.djangoproject.com/)
-**Language:** Python 3.x
-**Database:** SQLite
-**Environment Management:** `python-dotenv`
+* **Framework:** [Django](https://www.djangoproject.com/)
+* **Language:** Python 3.x
+* **Database:** SQLite
+* **Environment Management:** `python-dotenv`
 
 ---
 
@@ -49,4 +49,3 @@ python manage.py migrate
 python manage.py runserver
 ```
 ### 6. Visit http://127.0.0.1:8000/ to see the app in action!
-``
