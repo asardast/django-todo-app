@@ -24,3 +24,24 @@ A simple and secure Task Management application built with **Django 6.0**. This 
 git clone [https://github.com/your-username/django-todo-app.git](https://github.com/your-username/django-todo-app.git)
 cd django-todo-app
 https://github.com/asardast/django-todo-app/tree/main
+```
+### 2. Set up Virtual Environment
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+# venv\Scripts\activate  # On Windows
+
+### 3. Install Dependencies
+pip install -r requirements.txt
+
+### 4. Configuration (.env)
+Create a .env file in the root directory and add your secret key:
+SECRET_KEY=your_secret_key_here
+DEBUG=True
+
+### 5. Run Migrations & Start Server
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+### 6. Visit http://127.0.0.1:8000/ to see the app in action!
+
