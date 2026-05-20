@@ -1,4 +1,4 @@
-## Django REST-based Todo API
+## Django Todo API
 A secure and scalable Task Management REST API built with **Django 6.0** and **Django REST Framework (DRF)**. This project has been transitioned into a decoupled backend application, serving clean JSON data and configured with CORS to seamlessly integrate with modern frontend frameworks like **Vue.js**.
 
 ---
@@ -23,8 +23,8 @@ A secure and scalable Task Management REST API built with **Django 6.0** and **D
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/asardast/django-todo-app.git](https://github.com/asardast/django-todo-app.git)
-cd django-todo-app
+git clone [https://github.com/asardast/django-todo-api.git](https://github.com/asardast/django-todo-api.git)
+cd django-todo-api
 ```
 ### 2. Set up Virtual Environment
 ```bash
@@ -49,4 +49,4 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-### 6. Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/api/tasks/) to see the app in action!
+### 6. Visit (http://127.0.0.1:8000/api/tasks/) to see the app in action!
