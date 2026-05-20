@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+""" from django.shortcuts import render, redirect
 from .models import Task # مدل تسک را وارد می‌کنیم
 from .forms import TaskForm
 
@@ -27,4 +27,12 @@ def complete_task(request, pk):
     task = Task.objects.get(id=pk)
     task.completed = not task.completed # وضعیت رو معکوس کن
     task.save()
-    return redirect('/')
+    return redirect('/') """
+
+from rest_framework.viewsets import ModelViewSet
+from .models import Task
+from .serializers import TaskSerializer
+
+class TaskViewSet(ModelViewSet):
+    queryset = Task.objects.all().order_by('-created_at')
+    serializer_class = TaskSerializer
